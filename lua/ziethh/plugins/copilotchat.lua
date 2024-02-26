@@ -25,12 +25,12 @@ return {
         mode = "v",
         desc = "CopilotChat - Open in vertical split",
       },
-      -- {
-      --   "<leader>ccx",
-      --   ":CopilotChatInPlace<cr>",
-      --   mode = "n",
-      --   desc = "CopilotChat - Run in-place code",
-      -- },
+      {
+        "<leader>ccx",
+        ":CopilotChatInPlace<cr>",
+        mode = "n",
+        desc = "CopilotChat - Run in-place code",
+      },
       {
         "<leader>ccw",
         ":CopilotChat respond to the following in a learning manner and explain every detail-<Space>",
