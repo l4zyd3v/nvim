@@ -31,9 +31,14 @@ return {
         mode = "n",
         desc = "CopilotChat - Run in-place code",
       },
+      -- {
+      --   "<leader>ccw",
+      --   ":CopilotChat respond to the following in a learning manner and explain every detail-<Space>",
+      --   desc = "CopilotChat - Chat with Copilot",
+      -- },
       {
         "<leader>ccw",
-        ":CopilotChat respond to the following in a learning manner and explain every detail-<Space>",
+        ":CopilotChat <Space>",
         desc = "CopilotChat - Chat with Copilot",
       },
       -- {

@@ -19,7 +19,7 @@ return {
         float = {
           enable = true,
         },
-        width = 30,
+        width = 40,
         relativenumber = true,
       },
       -- change folder arrow icons

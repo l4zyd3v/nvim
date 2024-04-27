@@ -88,10 +88,10 @@ return {
     })
 
     -- configure tailwindcss server
-    -- lspconfig["tailwindcss"].setup({
-    --   capabilities = capabilities,
-    --   on_attach = on_attach,
-    -- })
+    lspconfig["tailwindcss"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
 
     -- configure svelte server
     -- lspconfig["svelte"].setup({
@@ -127,7 +127,18 @@ return {
     lspconfig["emmet_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-      filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+      filetypes = {
+        "html",
+        "typescriptreact",
+        "javascriptreact",
+        "css",
+        "sass",
+        "scss",
+        "less",
+        "svelte",
+        "typescript",
+        "javascript",
+      },
     })
 
     -- configure python server
