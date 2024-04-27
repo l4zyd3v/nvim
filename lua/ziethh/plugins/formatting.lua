@@ -13,6 +13,7 @@ return {
         typescriptreact = { "prettier" },
         svelte = { "prettier" },
         css = { "prettier" },
+        tailwindcss = { "prettier" },
         html = { "prettier" },
         json = { "prettier" },
         yaml = { "prettier" },
@@ -24,7 +25,7 @@ return {
       format_on_save = {
         lsp_fallback = true,
         async = false,
-        timeout_ms = 500,
+        timeout_ms = 1400,
       },
     })
 

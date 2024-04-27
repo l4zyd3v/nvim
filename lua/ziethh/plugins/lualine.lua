@@ -16,6 +16,16 @@ return {
       inactive_bg = "#2c3043",
     }
 
+    local insertColors = {
+      bg = "#ff1100",
+      fg = "#000000",
+    }
+
+    local visualColors = {
+      bg = "#FF61EF",
+      fg = "#000000",
+    }
+
     local my_lualine_theme = {
       normal = {
         a = { bg = colors.blue, fg = colors.bg, gui = "bold" },
@@ -23,14 +33,14 @@ return {
         c = { bg = colors.bg, fg = colors.fg },
       },
       insert = {
-        a = { bg = colors.red, fg = colors.bg, gui = "bold" },
-        b = { bg = colors.bg, fg = colors.fg },
-        c = { bg = colors.bg, fg = colors.fg },
+        a = { bg = insertColors.bg, fg = insertColors.fg, gui = "bold" },
+        b = { bg = insertColors.bg, fg = insertColors.fg },
+        c = { bg = insertColors.bg, fg = insertColors.fg },
       },
       visual = {
-        a = { bg = colors.violet, fg = colors.bg, gui = "bold" },
-        b = { bg = colors.bg, fg = colors.fg },
-        c = { bg = colors.bg, fg = colors.fg },
+        a = { bg = visualColors.bg, fg = visualColors.fg, gui = "bold" },
+        b = { bg = visualColors.bg, fg = visualColors.fg },
+        c = { bg = visualColors.bg, fg = visualColors.fg },
       },
       command = {
         a = { bg = colors.yellow, fg = colors.bg, gui = "bold" },

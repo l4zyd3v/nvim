@@ -22,3 +22,6 @@ vim.opt.clipboard:append("unnamedplus")
 -- split windows
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+
+-- This is for the sake of expo, otherwise it doesn't update o save
+vim.opt.backupcopy = "yes"
