@@ -35,7 +35,7 @@ return {
     keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
     keymap.set(
       "n",
-      "<leader>/",
+      "<leader><leader>",
       "<cmd>Telescope current_buffer_fuzzy_find<cr>",
       { desc = "Fuzzy find in current buffer" }
     )
