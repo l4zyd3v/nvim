@@ -33,9 +33,9 @@ keymap.set("n", "<M-j>", "<C-e>", { desc = "scroll down" }) -- scroll down
 
 keymap.set("n", "<M-k>", "<C-y>", { desc = "Scroll down" }) -- scroll down
 
-keymap.set("n", "<M-J>", "7<C-e>", { desc = "scroll down" }) -- scroll down more
+keymap.set("n", "<M-J>", "8<C-e>", { desc = "scroll down" }) -- scroll down more
 
-keymap.set("n", "<M-K>", "7<C-y>", { desc = "Scroll down" }) -- scroll down more
+keymap.set("n", "<M-K>", "8<C-y>", { desc = "Scroll down" }) -- scroll down more
 
 keymap.set("i", "<M-j>", "<Down>", { desc = "Arrow down" }) -- Arrow Down
 keymap.set("i", "<M-k>", "<Up>", { desc = "Arrow up" }) -- Arrow Up
@@ -51,3 +51,5 @@ keymap.set("n", "<leader>,", "<cmd>bprev<CR>", { desc = "bprev" })
 vim.api.nvim_set_keymap("t", "<leader>+", "<C-\\><C-n>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "J", "", { noremap = true, silent = true })
+
+keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = "Toggle ZenMode" }) -- ZenMode
