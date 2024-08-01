@@ -19,7 +19,7 @@ return {
         float = {
           enable = true,
         },
-        width = 40,
+        width = 80,
         relativenumber = true,
       },
       -- change folder arrow icons
@@ -66,10 +66,52 @@ return {
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
 
-    keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
-    keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle!<CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file
-    keymap.set("n", "<leader>eg", "<cmd>NvimTreeFindFile!<CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file
+    _G.toggleNvimTreeAndResize = function(command)
+      -- treeOpen is declared and initialized in the global scope and is set to false
+      if not _G.treeOpen then
+        vim.cmd(command)
+        _G.treeOpen = true
+        vim.cmd("vertical resize 50")
+        -- vim.cmd("horizontal resize 40")
+
+        local max_height = vim.o.lines
+        local linesFor80Percent = math.floor(max_height * 0.8)
+
+        vim.cmd("resize " .. linesFor80Percent)
+      else
+        vim.cmd("NvimTreeClose")
+        _G.treeOpen = false
+      end
+    end
+
+    keymap.set(
+      "n",
+      "<leader>ee",
+      "<cmd>lua _G.toggleNvimTreeAndResize('NvimTreeOpen')<CR>",
+      { desc = "Toggle file explorer" }
+    ) -- toggle file explorer
+
+    keymap.set(
+      "n",
+      "<leader>ef",
+      "<cmd>lua _G.toggleNvimTreeAndResize('NvimTreeFindFileToggle!')<CR>",
+      { desc = "Toggle file explorer on current file" }
+    ) -- toggle file explorer on current file
+
+    keymap.set(
+      "n",
+      "<leader>eg",
+      "<cmd>lua _G.toggleNvimTreeAndResize('NvimTreeFindFile!')<CR>",
+      { desc = "Toggle file explorer on current file" }
+    ) -- toggle file explorer on current file
+
     keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" }) -- collapse file explorer
-    keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" }) -- refresh file explorer
+
+    keymap.set(
+      "n",
+      "<leader>er",
+      "<cmd>lua _G.toggleNvimTreeAndResize('NvimTreeRefresh')<CR>",
+      { desc = "Refresh file explorer" }
+    ) -- refresh file explorer
   end,
 }
